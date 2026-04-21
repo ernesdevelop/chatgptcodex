@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Client Manager</h1>
+
+      <form id="client-form" class="card">
+        <h2 id="form-title">Add Client</h2>
+        <input type="hidden" id="client-id" />
+
+        <label for="name">Name</label>
+        <input id="name" name="name" required maxlength="100" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required maxlength="200" />
+
+        <div class="actions">
+          <button type="submit" id="save-button">Add Client</button>
+          <button type="button" id="cancel-button" class="secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+
+      <section class="card">
+        <h2>Clients</h2>
+        <ul id="client-list" class="client-list"></ul>
+        <p id="empty-state" class="muted">No clients added yet.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
