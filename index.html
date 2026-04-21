@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern UI Refresh</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --primary: #4f46e5;
+        --primary-soft: #eef2ff;
+        --border: #e5e7eb;
+        --success: #10b981;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 35%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      .topbar {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 16px;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        position: sticky;
+        top: 0.75rem;
+        z-index: 10;
+        box-shadow: 0 8px 25px rgba(79, 70, 229, 0.08);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 700;
+      }
+
+      .badge {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 12px;
+        background: var(--primary);
+        display: grid;
+        place-content: center;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.92rem;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .hero {
+        margin-top: 1rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.25rem;
+        display: grid;
+        gap: 1rem;
+        box-shadow: 0 16px 30px rgba(31, 41, 55, 0.05);
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(1.35rem, 5vw, 2.2rem);
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .metric {
+        background: var(--primary-soft);
+        border-radius: 14px;
+        padding: 0.9rem;
+      }
+
+      .metric .value {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .metric .label {
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      .section-title {
+        margin: 1.2rem 0 0.75rem;
+        font-size: 1rem;
+        color: #111827;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: #ecfdf5;
+        color: #065f46;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        padding: 0.2rem 0.55rem;
+        margin-top: 0.7rem;
+      }
+
+      .dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--success);
+      }
+
+      @media (max-width: 880px) {
+        .hero-grid,
+        .cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .container {
+          padding: 0.75rem;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .actions {
+          width: 100%;
+        }
+
+        .actions button {
+          flex: 1;
+        }
+
+        .hero {
+          padding: 1rem;
+          border-radius: 16px;
+        }
+
+        .hero-grid,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div class="brand">
+          <div class="badge">UI</div>
+          <span>Dashboard</span>
+        </div>
+        <div class="actions">
+          <button class="btn-secondary">Preview</button>
+          <button class="btn-primary">Create new</button>
+        </div>
+      </header>
+
+      <section class="hero" aria-label="Overview">
+        <div>
+          <h1>A cleaner, faster interface that feels great on mobile.</h1>
+          <p>Refreshed spacing, typography, responsive cards, and modern visual polish.</p>
+        </div>
+        <div class="hero-grid">
+          <article class="metric">
+            <div class="value">97%</div>
+            <div class="label">Mobile usability</div>
+          </article>
+          <article class="metric">
+            <div class="value">1.2s</div>
+            <div class="label">Avg. load time</div>
+          </article>
+          <article class="metric">
+            <div class="value">+28%</div>
+            <div class="label">Task completion</div>
+          </article>
+        </div>
+      </section>
+
+      <h2 class="section-title">Quick actions</h2>
+      <section class="cards" aria-label="Quick actions">
+        <article class="card">
+          <h3>New campaign</h3>
+          <p>Launch a campaign with a guided step-by-step setup flow.</p>
+          <div class="pill"><span class="dot"></span> Ready</div>
+        </article>
+        <article class="card">
+          <h3>Audience insights</h3>
+          <p>Review segmentation, conversion, and retention trends instantly.</p>
+          <div class="pill"><span class="dot"></span> Synced</div>
+        </article>
+        <article class="card">
+          <h3>Automations</h3>
+          <p>Build no-code automations with reusable templates and triggers.</p>
+          <div class="pill"><span class="dot"></span> Active</div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
