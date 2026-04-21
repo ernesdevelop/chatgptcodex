@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.card {
+    border: 0;
+}
+
+.btn {
+    white-space: nowrap;
+}
